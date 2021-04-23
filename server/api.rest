@@ -1,0 +1,47 @@
+###
+GET http://localhost:3000/api/mails
+###
+GET http://localhost:4000/api/mails/1
+
+###
+POST http://localhost:3001/api/mails/
+Content-Type: application/json
+
+{
+    "texto_msg": "ok ya voy!!",
+    "src_msg": "texto",
+    "tipo_msg": "texto",
+    "fechaEnvio_msg": "19/02/21",
+    "horaEnvio_msg": "4:09pm",
+    "fechaRecepcion_msg": "18/02/21",
+    "horaRecepcion_msg": "5:01",
+    "remitente_msg": "eli",
+    "destinatario_msg": "edicta",
+    "status_msg": "200",
+    "ruta_msg": "whats up",
+    "archivoAdjunto_msg": "ninguno"
+  }
+
+###
+DELETE http://localhost:3000/api/mails/3
+
+###
+PUT  http://localhost:3000/api/mails/5
+Content-Type: application/json
+
+{
+    "id_msg": "6",
+    "texto_msg": "no voy a ir a casa",
+    "src_msg": "texto",
+    "tipo_msg": "texto",
+    "fechaEnvio_msg": "18/02/21",
+    "horaEnvio_msg": "4:09pm",
+    "fechaRecepcion_msg": "18/02/21",
+    "horaRecepcion_msg": "5:01",
+    "remitente_msg": "eli",
+    "destinatario_msg": "edicta",
+    "status_msg": "200",
+    "ruta_msg": "whats up",
+    "archivoAdjunto_msg": "ninguno"
+  }
+

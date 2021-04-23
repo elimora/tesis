@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form >
+        <input type="text" id="subject" placeholder="Nombre"><br>
+        <input type="text" id="email" placeholder="Email"><br>
+        <textarea name="text" id="text" cols="30" rows="10"></textarea><br>
+        <input type="submit" value="Submit">
+
+    </form>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $('form').on('submit', (e)=>{ 
+            e.preventDefault(); 
+
+            let fecha = new Date()
+            let hora = fecha.toLocaleTimeString()
+            let dia = fecha.toLocaleDateString()
+
+            const email=$('#email').val().trim();
+            const subject=$('#subject').val().trim();
+            const text=`${$('#text').val().trim()}, recibido en: ${hora}, y ${dia}`;
+           
+            const data ={
+                email, 
+                subject,
+                text, 
+                hora,
+                dia,
+            };
+
+            $.post('/email',data,function(){
+                console.log('El servidor recibio los datos ')
+            });
+
+            //usando Jquery para enviar al servidor
+        });
+    </script>
+
+</body>
+</html>

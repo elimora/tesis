@@ -1,0 +1,10 @@
+###
+POST http://localhost:300/api/forma
+Content-Type: application/json
+
+{
+    "name":"Eli", 
+    "lastname":"mora",
+    "email":"elimorameta80@gamil.com",
+    "message":"Hola esto es desde api rest de code"
+}
